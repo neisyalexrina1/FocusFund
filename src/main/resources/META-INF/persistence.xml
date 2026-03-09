@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="         https://jakarta.ee/xml/ns/persistence         https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="FocusFundPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>model.User</class>
+    <class>model.Course</class>
+    <class>model.StudyRoom</class>
+    <class>model.StudySession</class>
+    <class>model.Post</class>
+    <class>model.Comment</class>
+    <class>model.RoomMember</class>
+    <class>model.RoomMessage</class>
+    <!-- Gamification -->
+    <class>model.UserGamification</class>
+    <class>model.DailyStreak</class>
+    <class>model.Badge</class>
+    <class>model.UserBadge</class>
+    <class>model.Challenge</class>
+    <class>model.UserChallenge</class>
+    <class>model.Reward</class>
+    <class>model.UserReward</class>
+    <!-- Flashcards -->
+    <class>model.FlashcardDeck</class>
+    <class>model.Flashcard</class>
+    <class>model.UserFlashcardProgress</class>
+    <!-- Mindmaps -->
+    <class>model.Mindmap</class>
+    <class>model.MindmapNode</class>
+    <!-- Social -->
+    <class>model.PostLike</class>
+    <class>model.Follow</class>
+    <!-- VIP & Leaderboard -->
+    <class>model.VipTier</class>
+    <class>model.UserVipStatus</class>
+    <class>model.LeaderboardMonthly</class>
+    <!-- FocusFund Mode -->
+    <class>model.FocusFundContract</class>
+    <class>model.FocusFundTransaction</class>
+    <class>model.FocusFundPool</class>
+    <!-- Engagement -->
+    <class>model.DailyQuestTemplate</class>
+    <class>model.UserDailyQuest</class>
+    <class>model.MicroSession</class>
+    <class>model.StudyBuddy</class>
+    <class>model.BuddyActivity</class>
+    <class>model.StreakAlert</class>
+    <class>model.UserOnboarding</class>
+    <!-- Notifications -->
+    <class>model.Notification</class>
+    <!-- AI Chat -->
+    <class>model.AIChatSession</class>
+    <class>model.AIChatMessage</class>
+    <!-- Course Progress -->
+    <class>model.UserCourseProgress</class>
+    <!-- Email Notifications -->
+    <class>model.EmailNotification</class>
+    <properties>
+      <!-- JDBC -->
+      <!-- Sử dụng biến môi trường lấy từ Render, ví dụ: postgresql://user:password@host:port/dbname -->
+      <!-- Hoặc để trống nếu dùng Datasource/Env Variables. Ở đây điền mẫu URL Supabase -->
+      <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://db.kzhvxwwvavbaykxtnswi.supabase.co:5432/postgres?sslmode=require"/>
+      <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+      <property name="jakarta.persistence.jdbc.password" value="Dominhgiabao12"/>
+      <!-- Hibernate -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
