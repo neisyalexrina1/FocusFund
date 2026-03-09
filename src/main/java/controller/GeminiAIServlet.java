@@ -25,7 +25,7 @@ import java.util.*;
 @WebServlet("/api/ai")
 public class GeminiAIServlet extends HttpServlet {
 
-    private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+    private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
     private String apiKey;
     private final HttpClient httpClient = HttpClient.newHttpClient();
