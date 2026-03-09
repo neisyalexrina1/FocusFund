@@ -25,7 +25,7 @@ import java.util.*;
 @WebServlet("/api/ai")
 public class GeminiAIServlet extends HttpServlet {
 
-    private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
     private String apiKey;
     private final HttpClient httpClient = HttpClient.newHttpClient();
@@ -34,7 +34,8 @@ public class GeminiAIServlet extends HttpServlet {
 
     @Override
     public void init() {
-        apiKey = getServletContext().getInitParameter("GEMINI_API_KEY");
+        // Read directly from Environment Variable (Render configuration)
+        apiKey = System.getenv("GEMINI_API_KEY");
         chatDAO = new AIChatDAO();
     }
 
@@ -318,7 +319,8 @@ public class GeminiAIServlet extends HttpServlet {
             } else {
                 System.err.println("Gemini API error (" + geminiResponse.statusCode() + "): " + geminiResponse.body());
                 JsonObject errorResponse = new JsonObject();
-                errorResponse.addProperty("error", "AI service temporarily unavailable");
+                errorResponse.addProperty("error",
+                        "AI service error (" + geminiResponse.statusCode() + "): " + geminiResponse.body());
                 out.print(gson.toJson(errorResponse));
             }
 

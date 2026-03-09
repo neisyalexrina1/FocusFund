@@ -10,10 +10,7 @@
         </session-timeout>
     </session-config>
 
-    <context-param>
-        <param-name>GEMINI_API_KEY</param-name>
-        <param-value>AIzaSyD2NhypXxzYVIYuHAD5fyxIhBLmfjAg0rE</param-value>
-    </context-param>
+
     
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
