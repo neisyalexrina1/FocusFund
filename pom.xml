@@ -81,12 +81,7 @@
             <version>2.1.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-websocket-client-api</artifactId>
-            <version>11.0.18</version>
-            <type>jar</type>
-        </dependency>
+
 
         <!-- Jakarta Mail -->
         <dependency>
